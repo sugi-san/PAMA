@@ -86,7 +86,8 @@ def eval(args):
                 with torch.no_grad():
                     Ics = model(Ic, Is)
 
-                name_cs = "ics/" + os.path.splitext(content)[0]+"--"+style 
+                #name_cs = "ics/" + os.path.splitext(content)[0]+"--"+style
+                name_cs = "ics/" + content
                 save_image(Ics[0], name_cs)
     else:
         Ic = tf(Image.open(args.content)).to(DEVICE)
