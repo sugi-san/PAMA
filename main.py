@@ -11,7 +11,7 @@ from net import Net
 from utils import DEVICE, train_transform, test_transform, FlatFolderDataset, InfiniteSamplerWrapper, plot_grad_flow, adjust_learning_rate
 Image.MAX_IMAGE_PIXELS = None  
 ImageFile.LOAD_TRUNCATED_IMAGES = True
-from tqdm.notebook import tqdm ###
+from tqdm import tqdm ###
 
 
 def train(args):
