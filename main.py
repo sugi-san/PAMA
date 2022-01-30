@@ -11,6 +11,7 @@ from net import Net
 from utils import DEVICE, train_transform, test_transform, FlatFolderDataset, InfiniteSamplerWrapper, plot_grad_flow, adjust_learning_rate
 Image.MAX_IMAGE_PIXELS = None  
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+from tqdm.notebook import tqdm ###
 
 
 def train(args):
@@ -75,7 +76,8 @@ def eval(args):
     if args.run_folder == True:
         content_dir = args.content 
         style_dir = args.style
-        for content in os.listdir(content_dir):
+        #for content in os.listdir(content_dir):
+        for i, content in enumerate(tqdm(os.listdir(content_dir))):  ###
             for style in os.listdir(style_dir):
                 name_c = content_dir + content
                 name_s = style_dir + style
