@@ -65,7 +65,7 @@ def train(args):
 
 def eval(args):
     mes = "current pid: " + str(os.getpid())
-    print(mes)
+    #print(mes)
     logging.info(mes)
     model = Net(args)
     model.eval()
